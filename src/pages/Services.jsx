@@ -70,7 +70,7 @@ function Services() {
         setError("");
 
         const response = await fetch(
-          "http://192.168.1.35:5000/api/services"
+          "/api/services"
         );
 
         if (!response.ok) {
@@ -198,7 +198,7 @@ function Services() {
         {error ? (
           <div className="vsh-error">
             <h3>{error}</h3>
-            <p>Make sure the backend is running on port 5000.</p>
+            <p>Make sure the backend is running on port /api/....</p>
             <button
               type="button"
               onClick={() => window.location.reload()}
