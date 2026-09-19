@@ -111,7 +111,7 @@ function Home() {
   const handlePopularBooking = async (serviceName) => {
   try {
     const response = await fetch(
-      "http://localhost:5000/api/services"
+      "/api/services"
     );
 
     if (!response.ok) {

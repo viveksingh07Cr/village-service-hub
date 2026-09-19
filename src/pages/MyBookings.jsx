@@ -89,7 +89,7 @@ function MyBookings() {
 
         const response =
           await fetch(
-            `http://192.168.1.35:5000/api/bookings/customer/${savedUser.id}`,
+            `/api/bookings/customer/${savedUser.id}`,
             {
               method: "GET",
 

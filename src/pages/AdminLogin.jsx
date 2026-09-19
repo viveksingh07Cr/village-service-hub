@@ -38,7 +38,7 @@ function AdminLogin() {
 
   try {
     const response = await fetch(
-      "http://192.168.1.35:5000/api/admin/login",
+      "/api/admin/login",
       {
         method: "POST",
 

@@ -116,7 +116,7 @@ function Booking() {
 
     try {
       const response = await fetch(
-        "http://192.168.1.35:5000/api/bookings",
+        "/api/bookings",
         {
           method: "POST",
           headers: {

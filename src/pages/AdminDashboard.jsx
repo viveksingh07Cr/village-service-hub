@@ -75,7 +75,7 @@ function AdminDashboard() {
       }
 
       const response = await fetch(
-        "http://192.168.1.35:5000/api/admin/dashboard",
+        "/api/admin/dashboard",
         {
           headers: {
             Authorization:
@@ -191,7 +191,7 @@ function AdminDashboard() {
       }
 
       const response = await fetch(
-        `http://192.168.1.35:5000/api/admin/bookings/${bookingId}/status`,
+        `/api/admin/bookings/${bookingId}/status`,
         {
           method: "PUT",
 
@@ -265,7 +265,7 @@ function AdminDashboard() {
       }
 
       const response = await fetch(
-        "http://192.168.1.35:5000/api/admin/services",
+        "/api/admin/services",
         {
           method: "POST",
 
@@ -358,7 +358,7 @@ function AdminDashboard() {
       }
 
       const response = await fetch(
-        `http://192.168.1.35:5000/api/admin/services/${serviceId}`,
+        `/api/admin/services/${serviceId}`,
         {
           method: "DELETE",
 

@@ -71,7 +71,7 @@ function ProfessionalDashboard() {
 
 
       const response = await fetch(
-        "http://192.168.1.35:5000/api/professionals/bookings",
+        "/api/professionals/bookings",
         {
           headers: {
             Authorization:
@@ -213,7 +213,7 @@ function ProfessionalDashboard() {
 
         const response =
           await fetch(
-            `http://192.168.1.35:5000/api/professionals/bookings/${bookingId}/status`,
+            `/api/professionals/bookings/${bookingId}/status`,
             {
               method: "PUT",
 
