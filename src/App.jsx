@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Link,
+  useNavigate,
 } from "react-router-dom";
 import Services from "./pages/Services";
 import Booking from "./pages/Booking";
@@ -106,6 +107,49 @@ const popularServices = [
 
 function Home() {
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+  const handlePopularBooking = async (serviceName) => {
+  try {
+    const response = await fetch(
+      "http://localhost:5000/api/services"
+    );
+
+    if (!response.ok) {
+      throw new Error("Could not load services.");
+    }
+
+    const servicesFromDatabase = await response.json();
+
+    const service = servicesFromDatabase.find(
+      (item) => item.name === serviceName
+    );
+
+    if (!service) {
+      alert("This service is currently unavailable.");
+      return;
+    }
+
+    navigate("/booking", {
+      state: {
+        service: {
+          ...service,
+          time:
+            service.time ||
+            (service.name === "Home Cleaning"
+              ? "1-2 hrs"
+              : service.name === "Electrician"
+              ? "45-60 mins"
+              : service.name === "Plumbing"
+              ? "1 hr"
+              : "60 mins"),
+        },
+      },
+    });
+  } catch (error) {
+    console.error("Popular service booking error:", error);
+    alert("Could not connect to the server.");
+  }
+};
 
   return (
     <div className="app">
@@ -313,11 +357,29 @@ function Home() {
                 </div>
 
                 <div className="price-row">
-                  <strong>Starts at {service.price}</strong>
-                  <button>
-                    <ArrowRight size={17} />
-                  </button>
-                </div>
+  <strong>Starts at {service.price}</strong>
+
+  <button
+    type="button"
+    onClick={() => {
+      let serviceName = "";
+
+      if (service.title === "Full Home Cleaning") {
+        serviceName = "Home Cleaning";
+      } else if (service.title === "Bathroom Cleaning") {
+        serviceName = "Home Cleaning";
+      } else if (service.title === "Electrician Visit") {
+        serviceName = "Electrician";
+      } else if (service.title === "Plumbing Service") {
+        serviceName = "Plumbing";
+      }
+
+      handlePopularBooking(serviceName);
+    }}
+  >
+    <ArrowRight size={17} />
+  </button>
+</div>
               </div>
             </div>
           ))}

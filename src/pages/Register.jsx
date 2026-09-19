@@ -75,7 +75,7 @@ function Register() {
 
       const response =
         await fetch(
-          "http://localhost:5000/api/users/register",
+          "http://192.168.1.35:5000/api/users/register",
           {
             method: "POST",
 

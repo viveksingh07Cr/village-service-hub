@@ -25,7 +25,7 @@ function ProfessionalLogin() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/professionals/login",
+        "http://192.168.1.35:5000/api/professionals/login",
         {
           method: "POST",
 

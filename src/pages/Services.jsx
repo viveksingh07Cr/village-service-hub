@@ -70,7 +70,7 @@ function Services() {
         setError("");
 
         const response = await fetch(
-          "http://localhost:5000/api/services"
+          "http://192.168.1.35:5000/api/services"
         );
 
         if (!response.ok) {
