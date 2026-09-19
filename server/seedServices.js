@@ -39,12 +39,12 @@ const services = [
   {
     name: "AC Repair",
     category: "Appliance",
-    price: 399,
-    description: "AC servicing, repair, installation and general appliance support.",
+    price: 499,
+    description: "Professional AC repair and servicing.",
     image:
-      "https://images.unsplash.com/photo-1631545806609-3e5c5b8b9e3f?auto=format&fit=crop&w=800&q=80",
-    rating: 4.6,
-    reviews: 87,
+      "https://images.unsplash.com/photo-1631545806609-3e5c5b8b9e3f?auto=format&fit=crop&w=800&q=85",
+    rating: 4.8,
+    reviews: 124,
     isActive: true,
   },
   {
